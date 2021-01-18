@@ -234,7 +234,7 @@ If you're using version 2, you might want to configure Helm to use `--tls` mode.
 ### Installing `cert manager`
 {: #install-cert}
 
-{{site.data.keyword.datashield_short}} uses open source [`cert manager`](https://docs.cert-manager.io/en/latest/){: external} to set up TLS certificates for internal communication between {{site.data.keyword.datashield_short}} services. 
+{{site.data.keyword.datashield_short}} uses open source [`cert manager`](https://docs.cert-manager.io/en/latest/){: external} to set up TLS certificates for internal communication between {{site.data.keyword.datashield_short}} services.
 
 1. Create the resource in your cluster.
 
@@ -319,6 +319,10 @@ helm install <chart-name> iks-charts/ibmcloud-data-shield --set enclaveos-chart.
   </tr>
   <tr>
     <td><code>--set global.ServiceReplicas=&lt;replica-count&gt;</code></td>
+    <td>Optional: Since as of 01 December 2020, the custom IBM Cloud Kubernetes Service Ingress image is deprecated, for IBM Kubernetes clusters created after Dec 1st 2020, set the custom IBM Ingress image to `false`</td>
+  </tr>
+  <tr>
+    <td><code>--set global.UsingCustomIBMIngressImage=false</code></td>
     <td>Optional: If you're working with multi-node clusters, you can specify the replica count by appending the service replicas tag to your install command. <strong>Note</strong>: Your maximum replica count must be fewer than or equal to the number of nodes that exist in your cluster.</td>
   </tr>
 </table>
@@ -367,7 +371,7 @@ You can verify the installation and monitor the startup of your components by ru
 ## Next steps
 {: #gs-next}
 
-Now that the service is installed on your cluster, you can start protecting your data! You can choose to work with the [Enclave Manager UI](/docs/data-shield?topic=data-shield-enclave-manager), or you can choose to use the APIs to [convert](/docs/data-shield?topic=data-shield-convert#converting-images) and [deploy](/docs/data-shield?topic=data-shield-deploying) your applications. 
+Now that the service is installed on your cluster, you can start protecting your data! You can choose to work with the [Enclave Manager UI](/docs/data-shield?topic=data-shield-enclave-manager), or you can choose to use the APIs to [convert](/docs/data-shield?topic=data-shield-convert#converting-images) and [deploy](/docs/data-shield?topic=data-shield-deploying) your applications.
 
 If you don't have your own image to deploy, try deploying one of the prepackaged {{site.data.keyword.datashield_short}} images or sample apps:
 
