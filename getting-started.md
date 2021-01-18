@@ -319,11 +319,11 @@ helm install <chart-name> iks-charts/ibmcloud-data-shield --set enclaveos-chart.
   </tr>
   <tr>
     <td><code>--set global.ServiceReplicas=&lt;replica-count&gt;</code></td>
-    <td>Optional: Since as of 01 December 2020, the custom IBM Cloud Kubernetes Service Ingress image is deprecated, for IBM Kubernetes clusters created after Dec 1st 2020, set the custom IBM Ingress image to `false`</td>
+    <td>Optional: If you are working with multi-node clusters, you can specify the replica count by appending the service replicas tag to your install command. <strong>Note</strong>: Your maximum replica count must be fewer than or equal to the number of nodes that exist in your cluster.</td>
   </tr>
   <tr>
     <td><code>--set global.UsingCustomIBMIngressImage=false</code></td>
-    <td>Optional: If you're working with multi-node clusters, you can specify the replica count by appending the service replicas tag to your install command. <strong>Note</strong>: Your maximum replica count must be fewer than or equal to the number of nodes that exist in your cluster.</td>
+    <td>Optional: Since as of 01 December 2020, the custom IBM Cloud Kubernetes Service Ingress image is deprecated, for IBM Kubernetes clusters created after Dec 1st 2020, set the custom IBM Ingress image to `false`</td>
   </tr>
 </table>
 
